@@ -1,1 +1,4 @@
 # student-settler
+zalypa
+
+pizda
