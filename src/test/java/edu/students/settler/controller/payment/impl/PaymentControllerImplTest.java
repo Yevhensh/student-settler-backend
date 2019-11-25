@@ -1,10 +1,10 @@
 package edu.students.settler.controller.payment.impl;
 
 import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 class PaymentControllerImplTest {
 
@@ -12,7 +12,7 @@ class PaymentControllerImplTest {
 
     private PaymentControllerImpl underTest;
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
         underTest = new PaymentControllerImpl();
     }
@@ -23,7 +23,7 @@ class PaymentControllerImplTest {
 
         PaymentResponseDTO result = underTest.pay(null);
 
-        assertEquals(expectedResponse, result);
+        assertEquals(result, expectedResponse);
     }
 
     private PaymentResponseDTO buildPaymentResponseDTO() {
