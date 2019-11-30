@@ -12,7 +12,7 @@ import java.util.List;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "room_id")
     private long id;
 
     @Column(name = "number")
@@ -20,5 +20,9 @@ public class Room {
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "room_slots", joinColumns = @JoinColumn(name = "room_id"))
-    public List<RoomSlot> slots;
+    private List<RoomSlot> slots;
+
+    @ManyToOne
+    @JoinColumn(name = "dormitory_id")
+    private Dormitory dormitory;
 }
