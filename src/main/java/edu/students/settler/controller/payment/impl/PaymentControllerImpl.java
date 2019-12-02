@@ -1,8 +1,8 @@
 package edu.students.settler.controller.payment.impl;
 
 import edu.students.settler.controller.payment.PaymentController;
-import edu.students.settler.controller.payment.dto.PaymentInfoDTO;
-import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
+import edu.students.settler.controller.payment.dto.PaymentInfoDto;
+import edu.students.settler.controller.payment.dto.PaymentResponseDto;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +15,12 @@ public class PaymentControllerImpl implements PaymentController {
 
     @Override
     @PostMapping("pay")
-    public PaymentResponseDTO pay(PaymentInfoDTO paymentInfo) {
+    public PaymentResponseDto pay(PaymentInfoDto paymentInfo) {
         return formPaymentResponse();
     }
 
-    private PaymentResponseDTO formPaymentResponse() {
-        PaymentResponseDTO response = new PaymentResponseDTO();
+    private PaymentResponseDto formPaymentResponse() {
+        PaymentResponseDto response = new PaymentResponseDto();
         response.setMessage(PAYMENT_RESPONSE_MESSAGE);
 
         return response;

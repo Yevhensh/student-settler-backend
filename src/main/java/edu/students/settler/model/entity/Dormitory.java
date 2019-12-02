@@ -10,6 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "dormitory")
 public class Dormitory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "dormitory_id")

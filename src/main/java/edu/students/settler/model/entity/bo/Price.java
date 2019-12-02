@@ -7,5 +7,6 @@ import javax.persistence.*;
 @Data
 @Embeddable
 public class Price {
+
     private String price;
 }

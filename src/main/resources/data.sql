@@ -1,12 +1,12 @@
 INSERT INTO STUDENT (student_id, name, surname, student_number) VALUES
-    (1, 'tttt', 'tttt', '228228228228'),
-    (2, 'aaaa', 'aaaa', '66666666666'),
-    (3, 'vvvvv', 'vvvv', '111111111111');
+    (1, 'Степан', 'Ярмоленко', 'ВС103644АЕ'),
+    (2, 'Петро', 'Кособуцький', 'ТУ147АЕС'),
+    (3, 'Роман', 'Бандера', 'СС121212АК');
 
 INSERT INTO DORMITORY (DORMITORY_ID, NUMBER, PRICE) VALUES
-    (1, '11', '15000$'),
-    (2, '8', '40гривень'),
-    (3, '7', '50грн');
+    (1, '11', '3000 гривень'),
+    (2, '8', '2800 гривень'),
+    (3, '7', '2000 гривень');
 
 INSERT INTO ROOM (ROOM_ID, NUMBER, DORMITORY_ID) VALUES
     (1, '606', 1),
