@@ -1,6 +1,6 @@
 package edu.students.settler.controller.payment.impl;
 
-import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
+import edu.students.settler.controller.payment.dto.PaymentResponseDto;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -19,15 +19,15 @@ class PaymentControllerImplTest {
 
     @Test
     void testPay() {
-        PaymentResponseDTO expectedResponse = buildPaymentResponseDTO();
+        PaymentResponseDto expectedResponse = buildPaymentResponseDTO();
 
-        PaymentResponseDTO result = underTest.pay(null);
+        PaymentResponseDto result = underTest.pay(null);
 
         assertEquals(result, expectedResponse);
     }
 
-    private PaymentResponseDTO buildPaymentResponseDTO() {
-        PaymentResponseDTO response = new PaymentResponseDTO();
+    private PaymentResponseDto buildPaymentResponseDTO() {
+        PaymentResponseDto response = new PaymentResponseDto();
         response.setMessage(PAYMENT_RESPONSE_MESSAGE);
 
         return response;
