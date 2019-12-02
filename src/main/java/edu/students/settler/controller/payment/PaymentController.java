@@ -1,9 +1,9 @@
 package edu.students.settler.controller.payment;
 
-import edu.students.settler.controller.payment.dto.PaymentInfoDTO;
-import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
+import edu.students.settler.controller.payment.dto.PaymentInfoDto;
+import edu.students.settler.controller.payment.dto.PaymentResponseDto;
 
 public interface PaymentController {
 
-    PaymentResponseDTO pay(PaymentInfoDTO paymentInfo);
+    PaymentResponseDto pay(PaymentInfoDto paymentInfo);
 }
