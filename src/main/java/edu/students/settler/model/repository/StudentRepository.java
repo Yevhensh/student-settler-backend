@@ -1,4 +1,4 @@
-package edu.students.settler.model.repository.impl;
+package edu.students.settler.model.repository;
 
 import edu.students.settler.model.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
