@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-class PaymentControllerImplTest {
+public class PaymentControllerImplTest {
 
     private static final String PAYMENT_RESPONSE_MESSAGE = PaymentControllerImpl.PAYMENT_RESPONSE_MESSAGE;
 

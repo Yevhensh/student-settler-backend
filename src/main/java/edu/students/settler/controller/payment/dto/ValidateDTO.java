@@ -3,14 +3,12 @@ package edu.students.settler.controller.payment.dto;
 import lombok.Data;
 
 @Data
-public class ValidateDTO<T> {
+public class ValidateDTO {
 
-    private T dto;
     private String failMessage;
     private boolean isSuccess;
 
-    private ValidateDTO(T dto) {
-        this.dto = dto;
+    private ValidateDTO() {
         isSuccess = true;
     }
 
@@ -19,11 +17,11 @@ public class ValidateDTO<T> {
         this.isSuccess = false;
     }
 
-    public static <U> ValidateDTO<U> successful(U dto) {
-        return new ValidateDTO<>(dto);
+    public static ValidateDTO successful() {
+        return new ValidateDTO();
     }
 
-    public static <U> ValidateDTO<U> failed(String failMessage) {
-        return new ValidateDTO<>(failMessage);
+    public static ValidateDTO failed(String failMessage) {
+        return new ValidateDTO(failMessage);
     }
 }

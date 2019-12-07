@@ -6,6 +6,6 @@ import edu.students.settler.controller.payment.dto.ValidateDTO;
 
 public interface StudentService {
 
-    ValidateDTO<StudentDTO> validateStudentExistence(StudentDTO student);
+    ValidateDTO validateStudentExistence(StudentDTO student);
 
 }

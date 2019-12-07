@@ -22,7 +22,7 @@ public class StudentControllerImpl implements StudentController {
     }
 
     @PostMapping("validate")
-    public ValidateDTO<StudentDTO> validateStudent(@RequestBody StudentDTO studentDto) {
+    public ValidateDTO validateStudent(@RequestBody StudentDTO studentDto) {
         return studentService.validateStudentExistence(studentDto);
     }
 }

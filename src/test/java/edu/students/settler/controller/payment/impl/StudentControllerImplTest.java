@@ -1,32 +1,50 @@
 package edu.students.settler.controller.payment.impl;
 
-import edu.students.settler.controller.payment.StudentController;
+import edu.students.settler.StudentHelper;
 import edu.students.settler.controller.payment.dto.StudentDTO;
 import edu.students.settler.controller.payment.dto.ValidateDTO;
+import edu.students.settler.model.service.StudentService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
-class StudentControllerImplTest {
+@ExtendWith(MockitoExtension.class)
+public class StudentControllerImplTest implements StudentHelper {
 
     @Mock
-    private StudentController studentController;
+    private StudentService studentService;
+
+    @InjectMocks
+    private StudentControllerImpl studentController;
 
     @Test
-    void validateStudent() {
-        StudentDTO sampleStudent = formStudentDTO();
-        when(studentController.validateStudent(sampleStudent)).then()
+    void validateSuccesssfulStudent() {
+        StudentDTO sampleStudent = formStubStudentDTO();
+        ValidateDTO validateResult = ValidateDTO.successful();
+
+        when(studentService.validateStudentExistence(sampleStudent)).thenReturn(validateResult);
+
+        ValidateDTO actual = studentController.validateStudent(sampleStudent);
+
+        verify(studentService, atMostOnce()).validateStudentExistence(sampleStudent);
+        assertEquals(validateResult, actual, "Successful ValidateDTO must be returned");
     }
 
-    private StudentDTO formStudentDTO() {
-        return new StudentDTO(1L, "Petro", "Vasilovich", "u26123412141");
-    }
+    @Test
+    void validateFailedStudent() {
+        StudentDTO sampleStudent = formStubStudentDTO();
+        ValidateDTO validateResult = formFailedValidateDTO(sampleStudent);
 
-    private ValidateDTO<StudentDTO> formSuccessValidateDTO(StudentDTO student) {
-        return ValidateDTO.successful(student);
-    }
+        when(studentService.validateStudentExistence(sampleStudent)).thenReturn(validateResult);
 
-    private ValidateDTO<StudentDTO> formFailedValidateDTO()
+        ValidateDTO actual = studentController.validateStudent(sampleStudent);
+
+        verify(studentService, atMostOnce()).validateStudentExistence(sampleStudent);
+        assertEquals(validateResult, actual, "Failed ValidateDTO must be returned");
+    }
 }
