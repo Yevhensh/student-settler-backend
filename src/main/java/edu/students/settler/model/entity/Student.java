@@ -2,11 +2,13 @@ package edu.students.settler.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "student")
 public class Student {
