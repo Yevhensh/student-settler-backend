@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: student-settler-backend
+  name: student-settler-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-settler-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: student-settler-backend
+    spec:
+      containers:
+      - image: yevhensh/student-settler-backend
+        name: student-settler-backend
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: student-settler-backend
+  name: student-settler-backend
+spec:
+  ports:
+    - name: 8080-8080
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: student-settler-backend
+  type: ClusterIP
+status:
+  loadBalancer: {}
