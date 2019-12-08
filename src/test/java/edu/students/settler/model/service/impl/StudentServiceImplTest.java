@@ -31,12 +31,14 @@ public class StudentServiceImplTest implements StudentHelper {
         Student resStudent = formStubStudent();
         Optional<Student> resStudentOpt = Optional.of(resStudent);
 
-        when(studentRepository.findByNameAndSurnameAndStudentNumber("Petro", "Vasilovich", "u26123412141")).thenReturn(resStudentOpt);
+        when(studentRepository.findByNameAndSurnameAndStudentNumber(StudentConstants.STUDENT_NAME, StudentConstants.STUDENT_SURNAME,
+                StudentConstants.STUDENT_NUMBER)).thenReturn(resStudentOpt);
 
         ValidateDTO expected = ValidateDTO.successful();
         ValidateDTO actual = studentService.validateStudentExistence(inputStudentDTO);
 
-        verify(studentRepository, atMostOnce()).findByNameAndSurnameAndStudentNumber(anyString(), anyString(), anyString());
+        verify(studentRepository).findByNameAndSurnameAndStudentNumber(StudentConstants.STUDENT_NAME, StudentConstants.STUDENT_SURNAME,
+                StudentConstants.STUDENT_NUMBER);
         assertEquals(expected, actual, "Student should be found");
     }
 
@@ -44,12 +46,14 @@ public class StudentServiceImplTest implements StudentHelper {
     public void validateNotFoundStudentExistence() {
         StudentDTO inputStudentDTO = formStubStudentDTO();
 
-        when(studentRepository.findByNameAndSurnameAndStudentNumber("Petro", "Vasilovich", "u26123412141")).thenReturn(Optional.empty());
+        when(studentRepository.findByNameAndSurnameAndStudentNumber(StudentConstants.STUDENT_NAME, StudentConstants.STUDENT_SURNAME,
+                StudentConstants.STUDENT_NUMBER)).thenReturn(Optional.empty());
 
         ValidateDTO expected = formFailedValidateDTO(inputStudentDTO);
         ValidateDTO actual = studentService.validateStudentExistence(inputStudentDTO);
 
-        verify(studentRepository, atMostOnce()).findByNameAndSurnameAndStudentNumber(anyString(), anyString(), anyString());
+        verify(studentRepository).findByNameAndSurnameAndStudentNumber(StudentConstants.STUDENT_NAME, StudentConstants.STUDENT_SURNAME,
+                StudentConstants.STUDENT_NUMBER);
         assertEquals(expected, actual, "Student shouldn't be found");
     }
 }

@@ -31,7 +31,7 @@ public class StudentControllerImplTest implements StudentHelper {
 
         ValidateDTO actual = studentController.validateStudentExistence(sampleStudent);
 
-        verify(studentService, atMostOnce()).validateStudentExistence(sampleStudent);
+        verify(studentService).validateStudentExistence(sampleStudent);
         assertEquals(validateResult, actual, "Successful ValidateDTO must be returned");
     }
 
@@ -44,7 +44,7 @@ public class StudentControllerImplTest implements StudentHelper {
 
         ValidateDTO actual = studentController.validateStudentExistence(sampleStudent);
 
-        verify(studentService, atMostOnce()).validateStudentExistence(sampleStudent);
+        verify(studentService).validateStudentExistence(sampleStudent);
         assertEquals(validateResult, actual, "Failed ValidateDTO must be returned");
     }
 }
