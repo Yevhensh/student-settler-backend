@@ -14,4 +14,4 @@ _http://localhost:8080/settler/swagger-ui.html_
 
 ### Connection to h2
 Connection could be established with adding h2 database and specifying url:
-`jdbc:h2:~/mydata:studentsettler;AUTO_SERVER=TRUE`
+`jdbc:h2:file:./studentsettler;AUTO_SERVER=TRUE`
