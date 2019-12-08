@@ -17,11 +17,12 @@ public class Dormitory {
     private long id;
 
     @Column(name = "number")
-    private String number;
+    private int number;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "dormitory")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "dormitory_id")
     private Set<Room> rooms;
 
     @Embedded
-    private Price price;
+    private Price pricePerMonth;
 }

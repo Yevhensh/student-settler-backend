@@ -2,11 +2,11 @@ package edu.students.settler.model.entity.bo;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 
 @Data
 @Embeddable
 public class Price {
 
-    private String price;
+    private double price;
 }
