@@ -1,18 +1,18 @@
 package edu.students.settler.controller.payment.impl;
 
 import edu.students.settler.controller.payment.dto.PaymentResponseDto;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PaymentControllerImplTest {
+class PaymentControllerImplTest {
 
     private static final String PAYMENT_RESPONSE_MESSAGE = PaymentControllerImpl.PAYMENT_RESPONSE_MESSAGE;
 
     private PaymentControllerImpl underTest;
 
-    @BeforeMethod
+    @BeforeEach
     void setUp() {
         underTest = new PaymentControllerImpl();
     }

@@ -4,28 +4,21 @@ INSERT INTO STUDENT (student_id, name, surname, student_number) VALUES
     (3, 'Роман', 'Бандера', 'СС121212АК');
 
 INSERT INTO DORMITORY (DORMITORY_ID, NUMBER, PRICE) VALUES
-    (1, '11', '3000 гривень'),
-    (2, '8', '2800 гривень'),
-    (3, '7', '2000 гривень');
+    (1, 1, 400.0),
+    (2, 2, 500.0);
 
-INSERT INTO ROOM (ROOM_ID, NUMBER, DORMITORY_ID) VALUES
-    (1, '606', 1),
-    (2, '404', 1);
+INSERT INTO ROOM (ROOM_ID, TITLE, DORMITORY_ID) VALUES
+    (1, '101a', 1),
+    (2, '101b', 1),
+    (3, '101a', 2),
+    (4, '101b', 2);
 
 INSERT INTO ROOM_SLOTS (ROOM_ID, IS_AVAILABLE) VALUES
     (1, true),
     (1, false),
-    (1, false),
-    (1, true),
-    (1, false),
-    (1, true),
-    (1, true),
-    (1, false),
     (2, true),
     (2, true),
-    (2, false),
-    (2, true),
-    (2, false),
-    (2, true),
-    (2, true),
-    (2, true);
+    (3, false),
+    (3, false),
+    (4, true),
+    (4, false);

@@ -13,11 +13,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class StudentServiceImplTest implements StudentHelper {
+class StudentServiceImplTest implements StudentHelper {
 
     @Mock
     private StudentRepository studentRepository;
@@ -26,7 +27,7 @@ public class StudentServiceImplTest implements StudentHelper {
     private StudentServiceImpl studentService;
 
     @Test
-    public void validateSuccessfulStudentExistence() {
+    void validateSuccessfulStudentExistence() {
         StudentDTO inputStudentDTO = formStubStudentDTO();
         Student resStudent = formStubStudent();
         Optional<Student> resStudentOpt = Optional.of(resStudent);
@@ -43,7 +44,7 @@ public class StudentServiceImplTest implements StudentHelper {
     }
 
     @Test
-    public void validateNotFoundStudentExistence() {
+    void validateNotFoundStudentExistence() {
         StudentDTO inputStudentDTO = formStubStudentDTO();
 
         when(studentRepository.findByNameAndSurnameAndStudentNumber(StudentConstants.STUDENT_NAME, StudentConstants.STUDENT_SURNAME,

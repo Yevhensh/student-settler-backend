@@ -16,14 +16,10 @@ public class Room {
     @Column(name = "room_id")
     private long id;
 
-    @Column(name = "number")
-    private String number;
+    @Column(name = "title")
+    private String title;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "room_slots", joinColumns = @JoinColumn(name = "room_id"))
     private List<RoomSlot> slots;
-
-    @ManyToOne
-    @JoinColumn(name = "dormitory_id")
-    private Dormitory dormitory;
 }
