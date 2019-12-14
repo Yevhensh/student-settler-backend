@@ -1,5 +1,6 @@
 package edu.students.settler.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.students.settler.model.entity.bo.Price;
 import lombok.Data;
 
@@ -19,8 +20,9 @@ public class Dormitory {
     @Column(name = "number")
     private int number;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "dormitory_id")
+    @JsonIgnore
     private Set<Room> rooms;
 
     @Embedded
