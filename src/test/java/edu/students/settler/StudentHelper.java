@@ -16,7 +16,7 @@ public interface StudentHelper {
 
 
     default ValidateDTO formFailedValidateDTO(StudentDTO student) {
-        return ValidateDTO.failed(MessageFormat.format("Student with following fields not found: {0}", student));
+        return ValidateDTO.failed("Student with following fields is not found. Please, check your input.");
     }
 
     default StudentDTO formStubStudentDTO() {

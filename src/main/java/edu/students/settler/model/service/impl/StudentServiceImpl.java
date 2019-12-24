@@ -15,8 +15,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class StudentServiceImpl implements StudentService {
-
-    private static final String STUDENT_NOT_FOUND_MESSAGE = "Student with following fields not found: {0}";
+    private static final String STUDENT_NOT_FOUND_MESSAGE = "Student with following fields is not found. Please, check your input.";
 
     private final StudentRepository studentRepository;
 
@@ -41,8 +40,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     private ValidateDTO formFailedValidateDTO(StudentDTO student) {
-        String failMessage = MessageFormat.format(STUDENT_NOT_FOUND_MESSAGE, student.toString());
-        log.info(failMessage);
-        return ValidateDTO.failed(failMessage);
+        log.info(STUDENT_NOT_FOUND_MESSAGE);
+        return ValidateDTO.failed(STUDENT_NOT_FOUND_MESSAGE);
     }
 }
