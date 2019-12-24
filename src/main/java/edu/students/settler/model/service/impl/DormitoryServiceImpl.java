@@ -1,18 +1,18 @@
-package edu.students.settler.service.impl;
+package edu.students.settler.model.service.impl;
 
 import edu.students.settler.model.entity.Dormitory;
 import edu.students.settler.model.entity.Room;
 import edu.students.settler.model.repository.DormitoryRepository;
-import edu.students.settler.service.DormitoryService;
+import edu.students.settler.model.service.DormitoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-@Component
+@Service
 @AllArgsConstructor(onConstructor_ = @Autowired)
 class DormitoryServiceImpl implements DormitoryService {
 
