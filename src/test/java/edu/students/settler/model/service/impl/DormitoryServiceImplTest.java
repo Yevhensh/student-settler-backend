@@ -1,4 +1,4 @@
-package edu.students.settler.service.impl;
+package edu.students.settler.model.service.impl;
 
 import edu.students.settler.model.entity.Dormitory;
 import edu.students.settler.model.repository.DormitoryRepository;

@@ -3,7 +3,7 @@ package edu.students.settler.controller.dormitory.impl;
 import edu.students.settler.controller.dormitory.DormitoryController;
 import edu.students.settler.model.entity.Dormitory;
 import edu.students.settler.model.entity.Room;
-import edu.students.settler.service.DormitoryService;
+import edu.students.settler.model.service.DormitoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

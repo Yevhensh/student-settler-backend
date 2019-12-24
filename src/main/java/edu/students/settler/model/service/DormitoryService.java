@@ -1,4 +1,4 @@
-package edu.students.settler.service;
+package edu.students.settler.model.service;
 
 import edu.students.settler.model.entity.Dormitory;
 import edu.students.settler.model.entity.Room;
