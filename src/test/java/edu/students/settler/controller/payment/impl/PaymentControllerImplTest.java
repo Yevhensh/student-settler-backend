@@ -1,35 +1,33 @@
 package edu.students.settler.controller.payment.impl;
 
-import edu.students.settler.controller.payment.dto.PaymentResponseDto;
-import org.junit.jupiter.api.BeforeEach;
+import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
+import edu.students.settler.model.service.PaymentService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class PaymentControllerImplTest {
 
-    private static final String PAYMENT_RESPONSE_MESSAGE = PaymentControllerImpl.PAYMENT_RESPONSE_MESSAGE;
-
+    @InjectMocks
     private PaymentControllerImpl underTest;
-
-    @BeforeEach
-    void setUp() {
-        underTest = new PaymentControllerImpl();
-    }
+    @Mock
+    private PaymentService paymentService;
 
     @Test
     void testPay() {
-        PaymentResponseDto expectedResponse = buildPaymentResponseDTO();
+        when(paymentService.pay(isNull())).thenReturn(null);
 
-        PaymentResponseDto result = underTest.pay(null);
+        PaymentResponseDTO result = underTest.pay(null);
 
-        assertEquals(result, expectedResponse);
-    }
-
-    private PaymentResponseDto buildPaymentResponseDTO() {
-        PaymentResponseDto response = new PaymentResponseDto();
-        response.setMessage(PAYMENT_RESPONSE_MESSAGE);
-
-        return response;
+        verify(paymentService).pay(isNull());
+        assertNull(result);
     }
 }
