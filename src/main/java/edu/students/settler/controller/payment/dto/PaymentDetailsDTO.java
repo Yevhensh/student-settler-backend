@@ -6,8 +6,6 @@ import lombok.Data;
 public class PaymentDetailsDTO {
 
     private String studentNumber;
-    private String cardNumber;
-    private String ownerName;
-    private String monthYear;
-    private String cvc;
+    private double price;
+    private CreditCardDTO creditCard;
 }

@@ -2,7 +2,10 @@ package edu.students.settler.controller.payment.impl;
 
 import edu.students.settler.controller.payment.PaymentController;
 import edu.students.settler.controller.payment.dto.PaymentDetailsDTO;
-import edu.students.settler.controller.payment.dto.PaymentResponseDto;
+import edu.students.settler.controller.payment.dto.PaymentResponseDTO;
+import edu.students.settler.model.service.PaymentService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,20 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/payment")
-public class PaymentControllerImpl implements PaymentController {
+@AllArgsConstructor(onConstructor_ = @Autowired)
+class PaymentControllerImpl implements PaymentController {
 
-    static final String PAYMENT_RESPONSE_MESSAGE = "You have successfully paid for Dormitory.";
+    private PaymentService paymentService;
 
     @Override
     @PostMapping("pay")
-    public PaymentResponseDto pay(@RequestBody PaymentDetailsDTO paymentDetails) {
-        return formPaymentResponse();
-    }
-
-    private PaymentResponseDto formPaymentResponse() {
-        PaymentResponseDto response = new PaymentResponseDto();
-        response.setMessage(PAYMENT_RESPONSE_MESSAGE);
-
-        return response;
+    public PaymentResponseDTO pay(@RequestBody PaymentDetailsDTO paymentDetails) {
+        return paymentService.pay(paymentDetails);
     }
 }
