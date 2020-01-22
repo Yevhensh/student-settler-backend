@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 @Component
 class LiqPayPaymentInputBuilder {
@@ -15,7 +14,7 @@ class LiqPayPaymentInputBuilder {
     static final String UAH_CURRENCY = "UAH";
     static final String P2P_ACTION = "p2p";
     static final String PAYMENT_DESCRIPTION = "Payment for Dormitory.";
-    static final String[] RECEIVER_CARD_NUMBERS = {"4242424242424242", "INCORRECT_CARD_NUMBER"};
+    static final String RECEIVER_CARD_NUMBER = "4242424242424242";
 
     static final String PAYMENT_INPUT_ACTION = "action";
     static final String PAYMENT_INPUT_VERSION = "version";
@@ -38,7 +37,7 @@ class LiqPayPaymentInputBuilder {
         params.put(PAYMENT_INPUT_DESCRIPTION, PAYMENT_DESCRIPTION);
         params.put(PAYMENT_INPUT_ORDER_ID, generateOrderId());
         params.put(PAYMENT_INPUT_PUBLIC_KEY, liqPayPublicKey);
-        params.put(PAYMENT_INPUT_RECEIVER_CARD, getReceiverCardNumber());
+        params.put(PAYMENT_INPUT_RECEIVER_CARD, RECEIVER_CARD_NUMBER);
         params.put(PAYMENT_INPUT_CARD, paymentDetails.getCreditCard().getNumber());
         params.put(PAYMENT_INPUT_CARD_EXP_MONTH, paymentDetails.getCreditCard().getExpirationMonth());
         params.put(PAYMENT_INPUT_CARD_EXP_YEAR, paymentDetails.getCreditCard().getExpirationYear());
@@ -50,9 +49,5 @@ class LiqPayPaymentInputBuilder {
 
     private String generateOrderId() {
         return RandomString.make(16);
-    }
-
-    private String getReceiverCardNumber() {
-        return RECEIVER_CARD_NUMBERS[new Random().nextInt(2)];
     }
 }
