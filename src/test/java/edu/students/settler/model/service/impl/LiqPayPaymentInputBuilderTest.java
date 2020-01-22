@@ -6,9 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
-import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class LiqPayPaymentInputBuilderTest {
 
@@ -24,7 +24,7 @@ class LiqPayPaymentInputBuilderTest {
     private static final String API_VERSION = LiqPayPaymentInputBuilder.API_VERSION;
     private static final String UAH_CURRENCY = LiqPayPaymentInputBuilder.UAH_CURRENCY;
     private static final String PAYMENT_DESCRIPTION = LiqPayPaymentInputBuilder.PAYMENT_DESCRIPTION;
-    private static final Set<String> RECEIVER_CARD_NUMBERS = Set.of(LiqPayPaymentInputBuilder.RECEIVER_CARD_NUMBERS);
+    private static final String RECEIVER_CARD_NUMBER = LiqPayPaymentInputBuilder.RECEIVER_CARD_NUMBER;
 
     private static final String PAYMENT_INPUT_ACTION = LiqPayPaymentInputBuilder.PAYMENT_INPUT_ACTION;
     private static final String PAYMENT_INPUT_VERSION = LiqPayPaymentInputBuilder.PAYMENT_INPUT_VERSION;
@@ -60,7 +60,7 @@ class LiqPayPaymentInputBuilderTest {
         assertEquals(result.get(PAYMENT_INPUT_DESCRIPTION), PAYMENT_DESCRIPTION);
         assertNotNull(result.get(PAYMENT_INPUT_ORDER_ID));
         assertEquals(result.get(PAYMENT_INPUT_PUBLIC_KEY), LIQ_PAY_PUBLIC_KEY);
-        assertTrue(RECEIVER_CARD_NUMBERS.contains(result.get(PAYMENT_INPUT_RECEIVER_CARD)));
+        assertEquals(result.get(PAYMENT_INPUT_RECEIVER_CARD), RECEIVER_CARD_NUMBER);
         assertEquals(result.get(PAYMENT_INPUT_CARD), CARD_NUMBER);
         assertEquals(result.get(PAYMENT_INPUT_CARD_EXP_MONTH), CARD_EXPIRATION_MONTH);
         assertEquals(result.get(PAYMENT_INPUT_CARD_EXP_YEAR), CARD_EXPIRATION_YEAR);
