@@ -1,4 +1,4 @@
-package edu.students.settler.model.entity;
+package edu.students.settler.model.entity.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

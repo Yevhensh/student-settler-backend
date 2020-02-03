@@ -1,4 +1,4 @@
-package edu.students.settler.model.entity.bo;
+package edu.students.settler.model.entity.dormitory;
 
 import lombok.Data;
 

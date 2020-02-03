@@ -1,7 +1,7 @@
 package edu.students.settler.model.service.impl;
 
-import edu.students.settler.model.entity.Dormitory;
-import edu.students.settler.model.entity.Room;
+import edu.students.settler.model.entity.dormitory.Dormitory;
+import edu.students.settler.model.entity.dormitory.Room;
 import edu.students.settler.model.repository.DormitoryRepository;
 import edu.students.settler.model.service.DormitoryService;
 import lombok.AllArgsConstructor;

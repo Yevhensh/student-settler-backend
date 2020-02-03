@@ -1,6 +1,6 @@
 package edu.students.settler.model.repository;
 
-import edu.students.settler.model.entity.Dormitory;
+import edu.students.settler.model.entity.dormitory.Dormitory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

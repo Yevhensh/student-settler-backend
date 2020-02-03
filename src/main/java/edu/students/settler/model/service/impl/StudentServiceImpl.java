@@ -1,20 +1,19 @@
 package edu.students.settler.model.service.impl;
 
-import edu.students.settler.controller.payment.dto.StudentDTO;
-import edu.students.settler.controller.payment.dto.ValidateDTO;
-import edu.students.settler.model.entity.Student;
+import edu.students.settler.controller.student.dto.StudentDTO;
+import edu.students.settler.controller.student.dto.ValidateDTO;
+import edu.students.settler.model.entity.student.Student;
 import edu.students.settler.model.repository.StudentRepository;
 import edu.students.settler.model.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.MessageFormat;
 import java.util.Optional;
 
 @Slf4j
 @Service
-public class StudentServiceImpl implements StudentService {
+class StudentServiceImpl implements StudentService {
     private static final String STUDENT_NOT_FOUND_MESSAGE = "Student with following fields is not found. Please, check your input.";
 
     private final StudentRepository studentRepository;

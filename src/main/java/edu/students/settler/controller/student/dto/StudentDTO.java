@@ -1,4 +1,4 @@
-package edu.students.settler.controller.payment.dto;
+package edu.students.settler.controller.student.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

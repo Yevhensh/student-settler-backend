@@ -1,7 +1,6 @@
-package edu.students.settler.model.entity;
+package edu.students.settler.model.entity.dormitory;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import edu.students.settler.model.entity.bo.Price;
 import lombok.Data;
 
 import javax.persistence.*;

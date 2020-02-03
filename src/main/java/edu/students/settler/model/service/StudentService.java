@@ -1,8 +1,8 @@
 package edu.students.settler.model.service;
 
 
-import edu.students.settler.controller.payment.dto.StudentDTO;
-import edu.students.settler.controller.payment.dto.ValidateDTO;
+import edu.students.settler.controller.student.dto.StudentDTO;
+import edu.students.settler.controller.student.dto.ValidateDTO;
 
 public interface StudentService {
 

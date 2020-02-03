@@ -1,9 +1,9 @@
 package edu.students.settler.model.service.impl;
 
 import edu.students.settler.StudentHelper;
-import edu.students.settler.controller.payment.dto.StudentDTO;
-import edu.students.settler.controller.payment.dto.ValidateDTO;
-import edu.students.settler.model.entity.Student;
+import edu.students.settler.controller.student.dto.StudentDTO;
+import edu.students.settler.controller.student.dto.ValidateDTO;
+import edu.students.settler.model.entity.student.Student;
 import edu.students.settler.model.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

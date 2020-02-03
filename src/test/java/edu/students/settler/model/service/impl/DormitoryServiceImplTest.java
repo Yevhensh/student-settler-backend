@@ -1,6 +1,6 @@
 package edu.students.settler.model.service.impl;
 
-import edu.students.settler.model.entity.Dormitory;
+import edu.students.settler.model.entity.dormitory.Dormitory;
 import edu.students.settler.model.repository.DormitoryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

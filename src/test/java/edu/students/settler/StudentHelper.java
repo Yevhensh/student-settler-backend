@@ -1,10 +1,8 @@
 package edu.students.settler;
 
-import edu.students.settler.controller.payment.dto.StudentDTO;
-import edu.students.settler.controller.payment.dto.ValidateDTO;
-import edu.students.settler.model.entity.Student;
-
-import java.text.MessageFormat;
+import edu.students.settler.controller.student.dto.StudentDTO;
+import edu.students.settler.controller.student.dto.ValidateDTO;
+import edu.students.settler.model.entity.student.Student;
 
 public interface StudentHelper {
     class StudentConstants {
