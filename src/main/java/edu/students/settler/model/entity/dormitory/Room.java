@@ -1,6 +1,5 @@
-package edu.students.settler.model.entity;
+package edu.students.settler.model.entity.dormitory;
 
-import edu.students.settler.model.entity.bo.RoomSlot;
 import lombok.Data;
 
 import javax.persistence.*;

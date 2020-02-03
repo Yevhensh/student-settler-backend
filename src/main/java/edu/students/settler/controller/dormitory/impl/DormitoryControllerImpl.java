@@ -1,8 +1,8 @@
 package edu.students.settler.controller.dormitory.impl;
 
 import edu.students.settler.controller.dormitory.DormitoryController;
-import edu.students.settler.model.entity.Dormitory;
-import edu.students.settler.model.entity.Room;
+import edu.students.settler.model.entity.dormitory.Dormitory;
+import edu.students.settler.model.entity.dormitory.Room;
 import edu.students.settler.model.service.DormitoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

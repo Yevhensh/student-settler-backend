@@ -1,8 +1,8 @@
-package edu.students.settler.controller.payment.impl;
+package edu.students.settler.controller.student.impl;
 
-import edu.students.settler.controller.payment.StudentController;
-import edu.students.settler.controller.payment.dto.StudentDTO;
-import edu.students.settler.controller.payment.dto.ValidateDTO;
+import edu.students.settler.controller.student.StudentController;
+import edu.students.settler.controller.student.dto.StudentDTO;
+import edu.students.settler.controller.student.dto.ValidateDTO;
 import edu.students.settler.model.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/student")
-public class StudentControllerImpl implements StudentController {
+class StudentControllerImpl implements StudentController {
 
     private StudentService studentService;
 
