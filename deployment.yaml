@@ -1,4 +1,4 @@
----
+#---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,26 +19,38 @@ spec:
         app: student-settler-backend
     spec:
       containers:
-      - image: yevhensh/student-settler-backend
-        name: student-settler-backend
-        resources: {}
+        - image: yevhensh/student-settler-backend
+          name: student-settler-backend
+          resources: {}
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /settler/actuator/health
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /settler/actuator/health
+            initialDelaySeconds: 5
+          ports:
+            - containerPort: 8080
 status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  creationTimestamp: null
-  labels:
-    app: student-settler-backend
-  name: student-settler-backend
-spec:
-  ports:
-    - name: 8080-8080
-      port: 8080
-      protocol: TCP
-      targetPort: 8080
-  selector:
-    app: student-settler-backend
-  type: ClusterIP
-status:
-  loadBalancer: {}
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  creationTimestamp: null
+#  labels:
+#    app: student-settler-backend
+#  name: student-settler-backend
+#spec:
+#  ports:
+#    - name: 8080-8080
+#      port: 8080
+#      protocol: TCP
+#      targetPort: 8080
+#  selector:
+#    app: student-settler-backend
+#  type: ClusterIP
+#status:
+#  loadBalancer: {}
